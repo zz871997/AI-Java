@@ -6,6 +6,7 @@ package Search_Engine;
  */
 
 public class AbstractSearchEngine {
+	
 	protected Maze maze;
 	public Maze getMaze(){
 		return maze;
@@ -15,7 +16,6 @@ public class AbstractSearchEngine {
 		maze = new Maze(width, height);
 		initSearch();
 	}
-	
 	
 	protected Location[] searchPath = null;
 	protected int pathCount;
@@ -71,26 +71,4 @@ public class AbstractSearchEngine {
 		
 		return tempMoves;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

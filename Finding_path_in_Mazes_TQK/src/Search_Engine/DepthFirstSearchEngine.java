@@ -1,14 +1,12 @@
 package Search_Engine;
 
 /**
- * 
  * @author Tran Quang Khai
  * 2D Maze Search: Performs a depth first search in a maze
  *
  */
 
 public class DepthFirstSearchEngine extends AbstractSearchEngine {
-
 	public DepthFirstSearchEngine(int width, int height) {
 		super(width, height);
 		iterateSearch(startLoc, 1);
@@ -37,8 +35,5 @@ public class DepthFirstSearchEngine extends AbstractSearchEngine {
 			}
 		}
 		return;
-	}
-	
-	
-	
+	}	
 }

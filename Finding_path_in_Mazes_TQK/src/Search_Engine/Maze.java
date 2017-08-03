@@ -33,17 +33,18 @@ public class Maze {
 				maze[i][j] = 0;
 			}
 		}
-		for(int i = 0; i < width+2; i++){
+		for(int i = 0; i < height+2; i++){
 			maze[0][i] = maze[width+1][i] = OBSTICLE;
 		}
-		for(int i = 0; i < height+2; i++){
+		for(int i = 0; i < width+2; i++){
 			maze[i][0] = maze[i][height+1] = OBSTICLE;
 		}
 		
 		/*
 		 * Randomize the maze by putting up obsticals.
 		 */
-		int max_obsticles = (width * height) / 3;
+	
+		int max_obsticles = (width * height) / 3;	
 		for(int i = 0; i < max_obsticles; i++){
 			int x = (int) (Math.random() * width);
 			int y = (int) (Math.random() * height);
@@ -57,6 +58,12 @@ public class Maze {
 		startLoc.y = 0;
 		setValue(0, 0, (short) 0);
 		
+		/**
+		 * Specify the goal location
+		 */
+		goalLoc.x = width -1;
+		goalLoc.y = height -1;
+		setValue(width-1, height -1, GOAL_LOC_VALUE);
 	}
 	
 	public int getWidth()  {  return width;}
@@ -67,11 +74,5 @@ public class Maze {
 	synchronized public void setValue(int x, int y, short value){
 		maze[x+1][y+1] = value;
 	}
-	
-	
-	
-	
-	
-	
 	
 }
